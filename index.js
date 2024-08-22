@@ -5,15 +5,17 @@ cargarIndice();
 
 async function cambioSlider(nextOrPrev=1, indiceSolicitado=-1){
     img = document.querySelector('.slider__img');
-    if(nextOrPrev==1 || indiceSolicitado>indiceSlider){
-        img.style.marginRight='50px';
-    }else{
-        img.style.marginLeft='50px';
+    if(indiceSlider!=indiceSolicitado){ //para que no se haga la animacion cuando se presiona el indice que ya esta seleccionado
+        if(nextOrPrev==1 || indiceSolicitado>indiceSlider){
+            img.style.marginRight='50px';
+        }else{
+            img.style.marginLeft='50px';
+        }
+        img.style.opacity='0';
+        await esperarAnimacion(nextOrPrev, indiceSolicitado);
+        img.style.opacity='1';
+        img.style.transition='.5s';
     }
-    img.style.opacity='0';
-    await esperarAnimacion(nextOrPrev, indiceSolicitado);
-    img.style.opacity='1';
-    img.style.transition='.5s';
 }
 
 function esperarAnimacion(nextOrPrev, indiceSolicitado){
