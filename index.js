@@ -2,6 +2,8 @@ let indiceSlider = 0;
 let fondosSlider = ['eb7ed8614201508b4b7eefcc1f000cec.jpeg','Mesa de trabajo 1@4x-100.jpg', '917625.png'];
 console.log('hola desde master')
 
+alert('hola desde la rama prueba')
+
 cargarIndice();
 
 async function cambioSlider(nextOrPrev=1, indiceSolicitado=-1){
