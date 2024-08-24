@@ -1,7 +1,8 @@
 let indiceSlider = 0;
-let fondosSlider = ['eb7ed8614201508b4b7eefcc1f000cec.jpeg','Mesa de trabajo 1@4x-100.jpg', '917625.png'];
+let fondosSlider = ['eb7ed8614201508b4b7eefcc1f000cec.jpeg','Mesa de trabajo 1@4x-100.jpg', '917625.png', 'e41d887798f3e39905b15c567f430b09.jpeg'];
 
 cargarIndice();
+let recorrerSlider = setInterval(cambioSlider, 3000);
 
 async function cambioSlider(nextOrPrev=1, indiceSolicitado=-1){
     img = document.querySelector('.slider__img');
@@ -15,6 +16,8 @@ async function cambioSlider(nextOrPrev=1, indiceSolicitado=-1){
         await esperarAnimacion(nextOrPrev, indiceSolicitado);
         img.style.opacity='1';
         img.style.transition='.5s';
+        clearInterval(recorrerSlider);
+        recorrerSlider = setInterval(cambioSlider, 3000);
     }
 }
 
