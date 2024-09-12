@@ -12,10 +12,8 @@
 }
 
 body{
-    display: flex;
     width: 100%;
     height: 100dvh;
-    flex-direction: column;
 }
 
 .contenido{
@@ -275,4 +273,76 @@ input[type="submit"]:hover{
 
 .registrarse a:hover{
     text-decoration: underline;
+}
+
+.favoritos{
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 500px;
+    width: 100%;
+    padding: 10px;
+    gap: 10px;
+    user-select: none;
+}
+
+.favoritos__post{
+    height: 200px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 1px 1px 8px 0 #8a8989;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.post__img{
+    height: 70%;
+}
+
+.post__acciones{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.cora{
+    cursor: pointer;
+}
+
+.cora:hover > path{
+    fill: #f00;
+}
+
+.acciones__right, .acciones__left{
+    gap: 10px;
+    display: flex;
+}
+
+.acciones__right{
+    cursor: pointer;
+}
+
+.acciones__right:hover >p, .acciones__right:hover> svg path{
+    color: var(--color1);
+    fill: var(--color1);
+}
+
+.titulo{
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 40px;
+    margin-left: 10px;
+    color: var(--color1);
+    position: relative;
+    display: flex;
+    text-wrap: nowrap;
+}
+
+.titulo::before{
+    content: attr(data-content);
+    color: #CDDC39;
+    position: absolute;
+    left: -3px;
+    top: -1px;
 }
