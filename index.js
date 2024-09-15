@@ -4,7 +4,7 @@ let fondosSlider = ['eb7ed8614201508b4b7eefcc1f000cec.jpeg','Mesa de trabajo 1@4
 cargarIndice();
 let recorrerSlider = setInterval(cambioSlider, 3000);
 
-document.body.addEventListener('click', (e)=>{if(window.getComputedStyle(document.querySelector('.formulario')).getPropertyValue('visibility')=='visible')document.querySelector('.formulario').style.visibility='hidden'});
+document.body.addEventListener('click', (e)=>{if(window.getComputedStyle(document.querySelector('.formulario')).getPropertyValue('visibility')=='visible'){document.querySelector('.formulario').style.visibility='hidden'; document.querySelectorAll('.username label').forEach(e=>e.style.transition='.0s')}});
 document.querySelector('.formulario').addEventListener('click', (e)=>{e.stopPropagation()})
 
 async function cambioSlider(nextOrPrev=1, indiceSolicitado=-1){
@@ -83,5 +83,6 @@ function actualizarIndice(indiceOld, indiceNew){
 
 function abrirLogin(event){
     event.stopPropagation();
+    document.querySelectorAll('.username label').forEach(e=>e.style.transition='.5s')
     document.querySelector('.formulario').style.visibility='visible';
 }
