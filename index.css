@@ -3,6 +3,7 @@
     --color0:#fff;
     --color1:rgb(98, 201, 142);
     --color2:#CDDC39;
+    --transparente: #333333bf;
 }
 
 *{
@@ -297,7 +298,35 @@ input[type="submit"]:hover{
 }
 
 .post__img{
+    width: 100%;
+    height: 100%;
+}
+
+.post__cont-img{
     height: 70%;
+    cursor: pointer;
+    position: relative;
+}
+
+.post__cont-img:hover > .post__contAutor{
+    display: flex;
+}
+
+.post__contAutor{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: var(--transparente);
+    color: #fff;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.post__contAutor p{
+    font-family: "Pixelify Sans", sans-serif;
+    font-size: 25px
 }
 
 .post__acciones{
@@ -325,6 +354,10 @@ input[type="submit"]:hover{
     cursor: pointer;
 }
 
+.acciones__right:active{
+    margin-top: 3px;
+}
+
 .acciones__right:hover >p, .acciones__right:hover> svg path{
     color: var(--color1);
     fill: var(--color1);
@@ -346,4 +379,29 @@ input[type="submit"]:hover{
     position: absolute;
     left: -3px;
     top: -1px;
+}
+
+.contHearth{
+    scale: 1;
+    transition: .5s;
+    animation-duration: .5s;
+    cursor: pointer;
+}
+
+@keyframes cora{
+    0%{
+        scale: 1;
+    }
+    25%{
+        scale: 1.2;
+    }
+    50%{
+        scale: 1;
+    }
+    75%{
+        scale: 1.3;
+    }
+    100%{
+        scale: 1;
+    }
 }

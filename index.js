@@ -86,3 +86,22 @@ function abrirLogin(event){
     document.querySelectorAll('.username label').forEach(e=>e.style.transition='.5s')
     document.querySelector('.formulario').style.visibility='visible';
 }
+
+function like(){
+    document.querySelector('.contHearth').innerHTML=`<svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" onclick="dislike()" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 12 12" style="enable-background:new 0 0 12 12;" xml:space="preserve">
+    <path fill="#f00" d="M4.5,1h-2v1h-1v1h-1v3h1v1h1v1h1v1h1v1h1v1h1v-1h1V9h1V8h1V7h1V6h1V3h-1V2h-1V1h-2v1h-1v1h-1V2h-1V1z M4.5,2v1h1v1h1V3h1V2  h2v1h1v3h-1v1h-1v1h-1v1h-1v1h-1V9h-1V8h-1V7h-1V6h-1V3h1V2H4.5z"/>
+    <polyline fill="#f00" points="1.5,3 10.5,3 10.5,6 1.5,6 "/>
+    <polyline fill="#f00" points="2.5,3 2.5,2 4.5,2 4.5,3 "/>
+    <polyline fill="#f00" points="7.5,3 7.5,2 9.5,2 9.5,3 "/>
+    <polyline fill="#f00" points="2.5,7 9.5,7 9.5,6 2.5,6 "/>
+    <polyline fill="#f00" points="3.5,8 8.5,8 8.5,7 3.5,7 "/>
+    <polyline fill="#f00" points="4.5,9 7.5,9 7.5,8 4.5,8 "/>
+    <polyline fill="#f00" points="5.5,10 6.5,10 6.5,9 5.5,9 "/>
+    </svg>`;
+    document.querySelector('.contHearth').style.animationName="cora";
+}
+
+function dislike(){
+    document.querySelector('.contHearth').innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" class="cora" onclick="like()" viewBox="0 0 24 24"><path fill="black" d="M9 2H5v2H3v2H1v6h2v2h2v2h2v2h2v2h2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2V6h-2V4h-2V2h-4v2h-2v2h-2V4H9zm0 2v2h2v2h2V6h2V4h4v2h2v6h-2v2h-2v2h-2v2h-2v2h-2v-2H9v-2H7v-2H5v-2H3V6h2V4z"/></svg>';
+    document.querySelector('.contHearth').style.animationName="";
+}
