@@ -105,3 +105,21 @@ function dislike(){
     document.querySelector('.contHearth').innerHTML='<svg xmlns="http://www.w3.org/2000/svg" width="25px" height="25px" class="cora" onclick="like()" viewBox="0 0 24 24"><path fill="black" d="M9 2H5v2H3v2H1v6h2v2h2v2h2v2h2v2h2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2V6h-2V4h-2V2h-4v2h-2v2h-2V4H9zm0 2v2h2v2h2V6h2V4h4v2h2v6h-2v2h-2v2h-2v2h-2v2h-2v-2H9v-2H7v-2H5v-2H3V6h2V4z"/></svg>';
     document.querySelector('.contHearth').style.animationName="";
 }
+
+function addFondo(){
+    
+}
+
+function ventanaModal(){
+    let fondoMsg = document.createElement('DIV');
+    fondoMsg.setAttribute('class', 'fondoMsg');
+    document.body.appendChild(fondoMsg);
+    fondoMsg.addEventListener('click', (e)=>{
+        e.target.remove();
+    });
+    let ventana = document.createElement('DIV');
+    ventana.setAttribute('class', 'ventana');
+    fondoMsg.appendChild(ventana);
+    ventana.addEventListener('click', (e)=>{e.stopPropagation()});
+    ventana.innerHTML='hola';
+}
